@@ -7,5 +7,5 @@ public class DaoKeyword {
 	public static final String COMMON_DELETE = "delete";
 	public static final String COMMON_CREATE = "create";
 	public static final String COMMON_DETAIL = "detail";
-	public static final String COMMON_USEYN = "uesyn";
+	public static final String COMMON_USEYN = "useyn";
 }
