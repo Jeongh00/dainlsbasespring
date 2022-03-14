@@ -1,0 +1,5 @@
+docker rm dainls-base 
+
+docker build -t dainlsbase:v1 . 
+
+docker run -t -i -p 8080:8080 -p 8000:8000 --name dainls-base -e JAVA_OPTS="-Xdebug -Xrunjdwp:transporrt=dt_socket,address=0.0.0.0:8000,server=y, suspend=n" dainlsbase:v1

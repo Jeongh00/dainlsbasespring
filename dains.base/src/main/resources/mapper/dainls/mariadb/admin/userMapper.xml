@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- <mapper namespace="egovframework.sqlmap.example.mappers.dainls.userMapper">
+ -->
+ <mapper namespace="userAdmin">
+ 	<select id="list" parameterType="hashMap" resultType="hashMap">
+		
+		
+ 	</select>
+ 	
+ 	<select id="detail" parameterType="hashMap" resultType="hashMap">
+ 
+ 	
+ 	</select>
+ 	
+ 	<update id="update" parameterType="hashMap">
+ 	
+ 	</update>
+ 
+ 	<update id="create" parameterType="hashMap">
+ 	
+ 	</update>
+ 	
+	<update id="delete" parameterType="hashMap">
+ 	
+ 	</update>
+ 	
+	<update id="useyn" parameterType="hashMap">
+ 	
+ 	</update> 	
+ </mapper>

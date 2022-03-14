@@ -15,6 +15,7 @@
  */
 package egovframework.example.sample.web;
 
+import java.util.HashMap;
 import java.util.List;
 
 import egovframework.example.sample.service.EgovSampleService;
@@ -26,6 +27,8 @@ import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.collections.map.HashedMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -36,6 +39,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springmodules.validation.commons.DefaultBeanValidator;
+
+import com.dainls.base.service.IUserAdminService;
 
 /**
  * @Class Name : EgovSampleController.java
@@ -60,7 +65,10 @@ public class EgovSampleController {
 	/** EgovSampleService */
 	@Resource(name = "sampleService")
 	private EgovSampleService sampleService;
-
+	
+	@Autowired
+	private IUserAdminService userAdminService;
+	
 	/** EgovPropertyService */
 	@Resource(name = "propertiesService")
 	protected EgovPropertyService propertiesService;
@@ -99,7 +107,13 @@ public class EgovSampleController {
 		int totCnt = sampleService.selectSampleListTotCnt(searchVO);
 		paginationInfo.setTotalRecordCount(totCnt);
 		model.addAttribute("paginationInfo", paginationInfo);
-
+		
+		System.out.println("aaaaaaaaaaaaa");
+		HashMap<String,Object> paramMap = new HashMap<>();
+		paramMap.put("param", "안태경");
+		//List<HashMap<String, Object> > param = (List<HashMap<String, Object>>) userAdminService.list("안태경");
+	
+		
 		return "sample/egovSampleList";
 	}
 
@@ -112,6 +126,8 @@ public class EgovSampleController {
 	 */
 	@RequestMapping(value = "/addSample.do", method = RequestMethod.GET)
 	public String addSampleView(@ModelAttribute("searchVO") SampleDefaultVO searchVO, Model model) throws Exception {
+		
+
 		model.addAttribute("sampleVO", new SampleVO());
 		return "sample/egovSampleRegister";
 	}
