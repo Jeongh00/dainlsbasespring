@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	 http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd ">
+
+	
+	<!--sqlmap-config-xml 설정 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource-mariadb" />
+		<property name="configLocation" value="classpath:/config/sql-map-config.xml" />
+	</bean>
+	
+	
+	<!--  sqlsessionfactory 설정 -->
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+	
+	
+	<!--  mmariadb jndi 설정 -->
+	<bean id="dataSource-mariadb" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			 <value>java:comp/env/jdbc/dainlsbase</value>
+		</property>
+	</bean>
+
+	<!-- MapperConfigurer setup for MyBatis Database Layer with @Mapper("deptMapper") in DeptMapper Interface -->
+ 	<!-- <bean class="egovframework.rte.psl.dataaccess.mapper.MapperConfigurer">
+		<property name="basePackage" value="egovframework.example.sample.service.impl, com.dainls.base.service" />
+	</bean> -->
+    
+</beans>
