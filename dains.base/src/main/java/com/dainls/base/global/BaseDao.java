@@ -69,6 +69,4 @@ public class BaseDao extends EgovAbstractDAO {
 		return sqlSession.selectList(queryId, params);
 	}
 	
-	
-	
 }

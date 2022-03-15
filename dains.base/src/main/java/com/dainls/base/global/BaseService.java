@@ -74,5 +74,4 @@ public class BaseService extends EgovAbstractServiceImpl{
 	        paramHash.put("LastIndex", lastIndex);
 	  }
 
-
 }

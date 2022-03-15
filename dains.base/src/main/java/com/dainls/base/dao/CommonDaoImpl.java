@@ -3,6 +3,7 @@ package com.dainls.base.dao;
 import java.util.HashMap;
 import java.util.List;
 
+
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 import com.dainls.base.dto.SearchDTO;
@@ -359,7 +360,6 @@ public class CommonDaoImpl extends BaseDao implements ICommonDao{
 		
 	}
 
-	
+}
 	
 
-}

@@ -16,5 +16,4 @@
  	<!-- <bean class="egovframework.rte.psl.dataaccess.mapper.MapperConfigurer">
 		<property name="basePackage" value="egovframework.example.sample.service.impl, com.dainls.base.service" />
 	</bean> -->
-    
-</beans>
+</beans>    

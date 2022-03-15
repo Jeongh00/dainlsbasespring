@@ -13,5 +13,5 @@ public class DaoKeyword {
 	public static final String PAGING_PAGENO = "pageNo";
 	public static final String PAGING_PAGESIZE = "pageSize";
 
-	
+
 }
