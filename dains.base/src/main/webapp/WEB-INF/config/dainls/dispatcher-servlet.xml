@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- <beans xmlns="http://www.springframework.org/schema/beans" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" 
+ xmlns:context="http://www.springframework.org/schema/context" 
+ xmlns:aop="http://www.springframework.org/schema/aop"  
+ xmlns:mvc="http://www.springframework.org/schema/mvc" 
+ xmlns:websocket="http://www.springframework.org/schema/websocket" 
+ xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd 
+  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd 
+  http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.3.xsd 
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"> --> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" 
+ xmlns:context="http://www.springframework.org/schema/context" 
+ xmlns:aop="http://www.springframework.org/schema/aop"  
+ xmlns:mvc="http://www.springframework.org/schema/mvc" 
+ xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd 
+  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd 
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"> 
+   
+ <mvc:default-servlet-handler/> 
+   
+<!--    <mvc:resources mapping="/img/**" location="C:\uploadfiles\img" /> 
+   <mvc:resources mapping="/video/**" location="C:\uploadfiles\video" /> 
+   <mvc:resources mapping="/doc/**" location="C:\uploadfiles\document" /> 
+     -->
+  <!--  <mvc:resources mapping="/live/**" location="C:\uploadfiles\wowza" /> --> 
+ <!-- <mvc:resources mapping="/**" location="/webapp/" /> --> 
+ <!-- <bean 
+  class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+  <property name="prefix" value="/WEB-INF/jsp/" /> 
+  <property name="suffix" value=".jsp" /> 
+ </bean> --> 
+ 
+ <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" id="jsonView"> 
+  <property name="contentType" value="application/json;charset=UTF-8" /> 
+ </bean> 
+  
+<!--  <mvc:interceptors> 
+  <mvc:interceptor> 
+   
+   <mvc:mapping path="/account/login/"/> 
+   <mvc:exclude-mapping path="/youthnavi/signup/**"/> 
+   <mvc:exclude-mapping path="/youthnavi/check/**"/> 
+   <mvc:exclude-mapping path="/youthnavi/logout"/> 
+   <mvc:exclude-mapping path="/board/*"/> 
+   <mvc:exclude-mapping path="/img/*"/> 
+   <mvc:exclude-mapping path="/doc/*"/> 
+   <mvc:exclude-mapping path="/video/*"/> 
+   <mvc:exclude-mapping path="/design/common/**"/> 
+   <mvc:exclude-mapping path="/youthnavi/login/checkplus_main.jsp"/> 
+   <bean id="ControllerAdminIntercoptor" class="com.youthnavi.base.global.ControllerAdminIntercoptor"></bean> 
+  </mvc:interceptor> 
+   
+  <mvc:interceptor> 
+   <mvc:mapping path="/youthnavi/**"/> 
+   <mvc:exclude-mapping path="/account/login/**"/> 
+   <mvc:exclude-mapping path="/youthnavi/signup/**"/> 
+   <mvc:exclude-mapping path="/youthnavi/check/**"/> 
+   <mvc:exclude-mapping path="/youthnavi/logout"/> 
+   <mvc:exclude-mapping path="/youthnavi/signupdate/"/> 
+   <mvc:exclude-mapping path="/board/*"/> 
+   <mvc:exclude-mapping path="/img/*"/> 
+   <mvc:exclude-mapping path="/doc/*"/> 
+   <mvc:exclude-mapping path="/video/*"/> 
+   <mvc:exclude-mapping path="/design/common/**"/> 
+   <mvc:exclude-mapping path="/youthnavi/login/**"/> 
+   <mvc:exclude-mapping path="/youthnavi/login/checkplus_main.jsp"/> 
+   <bean id="ControllerCenterIntercoptor" class="com.youthnavi.base.global.ControllerAdminIntercoptor"></bean> 
+  </mvc:interceptor> 
+ </mvc:interceptors>  
+ -->
+<!--  <bean id="controllerAop" class="com.youthnavi.base.global.ControllerAop" />  -->
+  
+<!--  <websocket:handlers allowed-origins="" > 
+  <websocket:mapping handler="echoReceiveHandler" path="/socket/receiveSocket"/> 
+  <websocket:sockjs websocket-enabled="true"/> 
+ </websocket:handlers> 
+  
+ <websocket:handlers  allowed-origins="*" >  
+  <websocket:mapping handler="echoChatHandler" path="/socket/chatSocket"/> 
+  <websocket:sockjs websocket-enabled="true"/> 
+ </websocket:handlers>  
+  
+
+ <bean id="echoChatHandler" class="com.youthnavi.base.global.ControllerChatWebSocket" /> 
+ <bean id="echoReceiveHandler" class="com.youthnavi.base.global.ControllerReceviceWebSocket" /> --> 
+  
+<!--  <aop:aspectj-autoproxy> 
+  <aop:include name="controllerAop" /> 
+ </aop:aspectj-autoproxy>  -->
+</beans>

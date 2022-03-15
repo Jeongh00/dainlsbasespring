@@ -39,7 +39,7 @@ public class UserAdminServiceImpl extends BaseService implements IUserAdminServi
 	@SuppressWarnings("unchecked")
 	@Override
 	public HashMap<String, Object> list(String paramText) {
-		
+		System.out.println("bbbbbbbbbbbbbbbbbb");
 		paramMap = getParamMap(paramText, false);
 		List<Map<String, Object>> list = (List<Map<String, Object>>) commonDao.list(paramMap, ADMIN_ADMIN_MAIN_KEYWORD, DaoKeyword.COMMON_LIST);
 		int totalCount = commonDao.totalCount(paramMap, ADMIN_ADMIN_MAIN_KEYWORD, DaoKeyword.COMMON_TOTALCOUNT);
